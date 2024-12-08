@@ -45,8 +45,6 @@ public:
 		slaves = nullptr;
 		slaves = new Student[amountOfSlaves];
 		slaves = temporaryArr;
-		delete[]temporaryArr;
-		temporaryArr = nullptr;
 	}
 	void Deleter(int index) {
 		IncrementDecrease(1);
