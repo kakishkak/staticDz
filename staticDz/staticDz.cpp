@@ -42,8 +42,11 @@ public:
 		}
 		temporaryArr[amountOfSlaves - 1].AssingValues(slave.getName());
 		delete[]slaves;
+		slaves = nullptr;
 		slaves = new Student[amountOfSlaves];
 		slaves = temporaryArr;
+		delete[]temporaryArr;
+		temporaryArr = nullptr;
 	}
 	void Deleter(int index) {
 		IncrementDecrease(1);
@@ -60,8 +63,11 @@ public:
 			}
 		}
 		delete[] slaves;
+		slaves = temporaryArr;
 		slaves = new Student[amountOfSlaves];
 		slaves = temporaryArr;
+		delete[]temporaryArr;
+		temporaryArr = nullptr;
 	}
 
 	void Renamer(int index, string name) {
